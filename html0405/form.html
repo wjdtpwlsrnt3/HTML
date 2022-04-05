@@ -1,0 +1,66 @@
+<meta charset="utf-8">
+<h1><a href="index.html">메인화면</a></h1>
+<body style="background-color: cornflowerblue;">
+    
+
+<!-- form 태그 안에 있는 input들은 하나의 테이터로 묶인다 
+type submit form 태그 안에 데이터는 모두 전송된다
+required 추가해주면 빈 값을 허용하지 않는다
+<form>
+    <input type="text" placeholder="*이름" required>
+    <input type="text" placeholder="*나이" required>
+    <input type="text" placeholder="성별">
+    <input type="text" placeholder="주소">
+    <br>
+    <input type="submit" value="회원가입">
+</form>-->
+<div style="width: 500px;">
+<form>
+    <fieldset>
+        <legend>신청자</legend>
+        <label for="">이름</label>
+        <input type="text" autofocus>
+        
+        <label for="">학번</label>
+        <input type="text" required>
+    </fieldset>
+<br>
+    <fieldset>
+        <legend>수강과목</legend>
+        <select>
+            <option>소프트웨어프로그래밍</option>
+            <option>게임프로그래밍</option>
+            <option>자바프로그래밍</option>
+            <option>이산수학</option>
+        </select>
+    </fieldset>
+<br>
+    <fieldset>
+        <legend>미리담기</legend>
+    <input type="checkbox" id="sw">
+    <label for="sw">소프트웨어프로그래밍</label>
+<br>
+    <input type="checkbox" id="game">
+    <label for="game">게임프로그래밍</label>
+<br>
+    <input type="checkbox" id="jave">
+    <label for="java">자바프로그래밍</label>
+<br>
+    <input type="checkbox" id="math">
+    <label for="math">이산수학</label>
+    </fieldset>
+<br>
+    <fieldset>
+        <legend>학생증을 첨부하시오</legend>
+        <label for=""></label>
+        <input type="file">
+    </fieldset>
+<br>
+    <fieldset>
+        <input type="submit" value="신청하기">
+        <input type="reset" value="다시작성">
+
+    </fieldset>
+</form>
+</div>
+</body>
