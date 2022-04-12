@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>googleEX</title>
+</head>
+<style>
+    .Gmail {
+        grid-area: gm;
+        text-align: right;
+    }
+    .img {
+        grid-area: ig;
+        text-align: right;
+    }
+    .menu {
+        grid-area: mn;
+        text-align: right;
+    }
+    .profile {
+        grid-area: pf;
+        text-align: right;
+    }
+    .empty {
+        grid-area: em;
+        text-align: right;
+    }
+    .container a {
+        font-size: 14px;
+        color: black;
+        display: inline-block;
+        border-right: 1px solid white;
+        text-decoration: none;
+    }
+    .side {
+        grid-area: sd;
+        background-color: bisque;
+        font-size: 80px;
+        margin: 80px;
+        padding: 30px;
+        text-align: center;
+    }
+    .footer {
+        grid-area: ft;
+        background-color: lightgrey;
+    }
+    .container {
+        display: grid;
+        /* height: 50vh; */
+        grid-template-areas: 
+        "em em em em em em em em em em em em em em em em em em em em em em em em em em em em em em em em gm ig mn pf"
+        "sd sd sd sd sd sd sd sd sd sd sd sd sd sd sd sd sd sd sd sd sd sd sd sd sd sd sd sd sd sd sd sd sd sd sd sd"
+        "ft ft ft ft ft ft ft ft ft ft ft ft ft ft ft ft ft ft ft ft ft ft ft ft ft ft ft ft ft ft ft ft ft ft ft ft"
+        ;
+    }
+    /* .item {
+        width: 100%;
+        height: 100%;
+        background-color: lightcoral;
+    } */
+    
+</style>
+<body>
+    <div id="kategorie">
+    <div class="container">
+        <div class="Gmail"><a href="Gmail.html"> Gmail</a></div>
+        <div class="img"><a href="img">이미지</a></div>
+        <div class="menu"><a href="menu">▦</a></div>
+        <div class="profile"><a href="profile">○</a></div>
+        <div class="empty"></div>
+    </div>
+
+        <div class="side">사이드메뉴</div>
+        <div class="footer">푸터</div>
+    
+</div>
+</body>
+</html>
