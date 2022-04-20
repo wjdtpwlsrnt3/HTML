@@ -1,0 +1,54 @@
+<!-- 웹사이트 레이아웃을 만드는 방법
+table 2*2
+개별적인 div 생성해서 float border-left-style
+flex
+grid
+위 방법들은 각 개발자의 성향이나 프로젝트의 방향에 따라
+달라질 수 있다. -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .container {
+        display: grid;
+        height: 50vh;
+        gap: 10px;
+        /* grid-template-columns: 1fr 3fr; */
+        /* grid-row: ; */
+        /* 총 3개의 div에서 colum 3개로 나뉨 3*3 */
+        grid-template-columns: auto auto auto;
+    }
+    .item {
+        width: 100%;
+        height: 100%;
+        background-color: lightcoral;
+    }
+    .item:nth-child(1) {
+        grid-column-start: 1;
+        grid-column-end: 4;
+    }
+    .item:nth-child(2) {
+        grid-row-start: 2;
+        grid-row-end: 4;
+    }
+    .item:nth-child(3) {
+        grid-row-start: 2;
+        grid-row-end: 4;
+        grid-column-start: 2;
+        grid-column-end: 4;
+    }
+</style>
+<body>
+    <div class="container">
+        <div class="item">헤더</div>
+        <div class="item">바디</div>
+        <div class="item">푸터</div>
+
+    </div>
+</body>
+</html>
