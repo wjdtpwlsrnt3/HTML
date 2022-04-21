@@ -1,0 +1,90 @@
+<meta charset="utf-8">
+<a href="index.html">메인화면</a>
+<a href="hope.html">수강신청</a>
+<a href="table.html">출석부</a>
+<a href="text.html">텍스트</a>
+<a href="list.html">목록</a>
+<a href="media.html">미디어</a>
+<a href="frame.html">프레임</a>
+<a href="form.html">폼</a>
+<a href="div.html">영역</a>
+
+<!-- input, radio, select, checkbox ...  -->
+
+<h2>입력</h2>
+
+<label for="name">ID : </label>
+<input type="text" name="name" 
+id="name" maxlength="5" value="아이디">
+<br>
+<label for name="pw">PASSWORD : </label>
+<input id="pw" type="password" maxlength="10">
+<br><br>
+<label for name="file">파일을 선택해주세요</label>
+<br>
+<input type="file">
+<br><br>
+<label for="range">볼륨을 선택해주세요</label>
+<input type="range" id="range" mix="0" max="10">
+<br><br>
+<label for="date">날짜를 선택해주세요</label>
+<input type="date" id="date"
+value="2022-04-05" min="2022-04-05" max="2050-12-31">
+<br><br>
+<!-- checkbox는 중복선택이 가능하다. -->
+<p>원하시는 것을 선택해주세요</p>
+
+<input type="checkbox" id="study">
+<label for="study">공부잘함</label>
+
+<input type="checkbox" id="hs">
+<label for="hs">잘생김</label>
+
+<input type="checkbox" id="beauty">
+<label for="beauty">예쁨</label>
+
+<input type="checkbox" id="rich">
+<label for="rich">부자</label>
+<br><br>
+<!-- radio는 중복선택이 불가능하다. -->
+<input type="radio" id="html" name="web">
+<label for="html">html</label>
+
+<input type="radio" id="css" name="web">
+<label for="css">css</label>
+
+<input type="radio" id="js" name="web">
+<label for="js">js</label>
+<br><br>
+<p>원하시는 것을 고르시오</p>
+<select>
+    <option value="">부산</option>
+    <option value="">경남</option>
+    <option value="">대구</option>
+    <option value="">광주</option>
+    <option value="">대전</option>
+    <option value="">서울</option>
+</select>
+<br><br>
+<label for="date">출발 날짜</label>
+<input type="date" id="date"
+value="2022-04-05" min="2022-04-05" max="2050-12-31">
+<br>
+<label for="date">도착 날짜</label>
+<input type="date" id="date"
+value="2022-04-05" min="2022-04-05" max="2050-12-31">
+<br>
+<p>항공사를 선택해주세요</p>
+
+<input type="radio" id="airplane" name="airplane">
+<label style="background-color: orange;" for="airplane">제주항공</label>
+
+<input type="radio" id="airplane" name="airplane">
+<label style="background-color: aqua;" for="airplane">아시아나항공</label>
+
+<input type="radio" id="airplane" name="airplane">
+<label style="background-color: pink;" for="airplane">피치항공</label>
+<br><br>
+<label for="file">신분증을 첨부해주세요</label>
+<br>
+<input type="file">
