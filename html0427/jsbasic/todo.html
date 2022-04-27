@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+#todo {
+    padding: 80px;
+    text-align: center;
+}
+
+#note {
+    display: inline-block
+}
+</style>
+<body>
+    <div id="todo">
+    
+    <div id="note">
+        <h1>할일목록</h1>
+         <!--window.event.keyCode==13 => enter키  -->
+        <!-- onkeyup 속성 안에 js 코드를 넣어줌 -->
+        <input type="text" id="item" onkeyup="if(window.event.keyCode==13){addItem()}">
+        <button onclick="addItem()">추가</button>
+    </div>
+    <div id="note">
+        <h1>할일목록</h1>
+         <!--window.event.keyCode==13 => enter키  -->
+        <!-- onkeyup 속성 안에 js 코드를 넣어줌 -->
+        <input type="text" id="item" onkeyup="if(window.event.keyCode==13){addItem()}">
+        <button onclick="addItem()">추가</button>
+    </div>
+    <div id="note">
+        <h1>할일목록</h1>
+         <!--window.event.keyCode==13 => enter키  -->
+        <!-- onkeyup 속성 안에 js 코드를 넣어줌 -->
+        <input type="text" id="item" onkeyup="if(window.event.keyCode==13){addItem()}">
+        <button onclick="addItem()">추가</button>
+    </div>
+</div>
+<div>
+    <ul id="todolist"></ul>
+</div>
+</body>
+</html>
+<script>
+    function addItem() {
+        var todo = document.getElementById('item').value;
+        alert(todo);
+        var list = document.getElementById('todolist');
+        var listitem = document.createElement('li');
+        listitem.innerText = todo;
+        list.appendChild(listitem);
+        document.getElementById('item').value = '';
+        
+        // x버튼 생성
+        var xbtn = document.createElement('button');
+        // x버튼에 class를 close 부여
+        xbtn.className = "close"
+        // <button class="close">
+        // &times => html의 엔티티로써 x를 표현하도록 약속
+        xbtn.innerHTML = '&times';
+        // li 태그의 자식요소로 x버튼을 넣어줌
+        xbtn.onclick = function(e) {
+            // e = 내가 클릭한 버튼
+            // pnode = 내가 선택한 버튼의 부모인 li
+            var pnode = e.target.parentNode;
+            // ul 태그의 자식 중에서 선택한 li를 삭제하겠다.
+            list.removeChild(pnode);
+        }
+        listitem.appendChild(xbtn);
+        // 버튼에 onclick 속성을 부여한다
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    }
+</script>
