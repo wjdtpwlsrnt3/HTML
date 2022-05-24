@@ -1,0 +1,196 @@
+<!Doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Hugo 0.98.0">
+    <title>Signin Template · Bootstrap v5.2</title>
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.2/examples/sign-in/">
+
+    
+
+    
+
+    <link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+
+      .b-example-divider {
+        height: 3rem;
+        background-color: rgba(0, 0, 0, .1);
+        border: solid rgba(0, 0, 0, .15);
+        border-width: 1px 0;
+        box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
+      }
+
+      .b-example-vr {
+        flex-shrink: 0;
+        width: 1.5rem;
+        height: 100vh;
+      }
+
+      .bi {
+        vertical-align: -.125em;
+        fill: currentColor;
+      }
+
+      .nav-scroller {
+        position: relative;
+        z-index: 2;
+        height: 2.75rem;
+        overflow-y: hidden;
+      }
+
+      .nav-scroller .nav {
+        display: flex;
+        flex-wrap: nowrap;
+        padding-bottom: 1rem;
+        margin-top: -1px;
+        overflow-x: auto;
+        text-align: center;
+        white-space: nowrap;
+        -webkit-overflow-scrolling: touch;
+      }
+    </style>
+
+    
+    <!-- Custom styles for this template -->
+    <link href="../view/signin.css" rel="stylesheet">
+  </head>
+  <body class="text-center">
+    
+<main class="form-signin w-100 m-auto">
+  <form action="sign_up_ok.php" method="post">
+    <img class="mb-4" src="assets/brand/bootstrap-logo.svg" alt="" width="72" height="57">
+    <h1 class="h3 mb-3 fw-normal">회원가입</h1>
+
+    <div class="form-floating">
+      <input name="name" type="text" class="form-control" id="floatingInput" required autofocus>
+      <label for="floatingInput">이름</label>      
+    </div>
+
+    <div class="form-floating">
+      <input name="age" type="text" class="form-control" id="floatingInput" required>
+      <label for="floatingInput">나이</label>      
+    </div>
+
+    <div class="form-floating">
+      <select id="sex" name="sex" class="form-select" required>
+        <option value=""></option>
+        <option value="남성">남성</option>
+        <option value="여성" >여성</option>
+    </select>
+      <label for="floatingInput">성별</label>      
+    </div>
+
+    <div class="form-floating">
+      <input name="location" type="text" 
+      class="form-control" id="addr"
+      readonly onclick="postcode()" required>
+      <label for="floatingInput">주소</label>      
+    </div>
+
+    <div class="form-floating">
+      <input id="email" name="email" type="email" class="form-control" id="floatingInput">
+      <input onclick="checkID()" type="button" value="중복확인" class="w-10 btn btn-lg btn-primary">
+
+      <label for="floatingInput">Email(ID)</label>      
+      <p id="emailCheckF" style="color: red; display: none;">이미 사용 중인 아이디입니다.</p>
+      <p id="emailCheckT" style="color: green; display: none">사용 가능한 아이디입니다.</p>
+    </div>
+
+    <div class="form-floating">
+      <input name="password" type="password" class="form-control" id="floatingPassword" required>
+      <label for="floatingPassword">비밀번호</label>
+    </div>
+
+    <button style="margin-bottom: 10px;" class="w-100 btn btn-lg btn-primary" type="submit">회원가입</button>    
+    
+    <p class="mt-5 mb-3 text-muted">&copy; 2017–2022</p>
+  </form>
+</main>
+
+
+    
+  </body>
+</html>
+
+
+<script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+
+<script>
+  let addr = document.querySelector("#addr");
+  
+   function postcode() {
+        new daum.Postcode({
+        oncomplete: function(data) {            
+            document.querySelector("#addr").value = data["address"];
+        }
+        }).open();
+    }
+
+
+
+
+
+
+
+
+
+
+    function checkID() {
+      var http = new XMLHttpRequest();
+      http.onreadystatechange = function() {
+        if(this.status == 200 && this.readyState == this.DONE) {
+          console.log(JSON.parse(http.response));
+          if(JSON.parse(http.response)['result'] == 'y') {
+            document.querySelector('#emailCheckF').style.display='block';
+            document.querySelector('#emailCheckT').style.display='none';
+          } else {
+            document.querySelector('#emailCheckF').style.display='none';
+            document.querySelector('#emailCheckT').style.display='block';
+          }
+        }
+      }
+      var email = document.querySelector('#email').value;
+      
+      var url = "http://localhost/phpproject/api/check_id.php?email=" + email;
+      console.log(url);
+      http.open('GET', url);
+      http.send();
+    }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
