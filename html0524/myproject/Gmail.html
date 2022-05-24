@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>받은편지함</title>
+</head>
+<style>
+    body {
+        margin: 0;
+    }
+
+    ul {
+        display: flex;
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        width: 100%; 
+        /* height: 5%;  */
+        position: fixed;
+        /* background-color: aqua; */
+    }
+
+    li {
+        border-right: 1px solid white;
+    }
+
+    li a {
+        display: block;
+        color: black;
+        padding: 20px;
+        text-decoration: none;
+        font-size: 10px;
+        text-align: center;
+    }
+
+    /* active 클래스가 아닌 a태그가 호버되었을 때만 작동 */
+    li a:hover {
+        background-color: lightgray;
+        color: white;
+    }
+
+    #myinfo {
+        position: absolute;
+        right: 0;    
+    }
+
+    #leftcontent a {
+        text-decoration: none;
+        color: gray;
+        height: 0px;
+        font-size: 12px;
+    }
+
+    #sort a {
+        padding: 0 0 0 0;
+        display: inline-block;
+    }
+
+    #mailkind a {
+        display: inline-block;
+        width: 200px;
+        font-size: 14px;
+    }
+
+    #mailkind a:nth-child(1):hover {
+        background-color: red;
+    }
+
+    #mailkind a:nth-child(2):hover {
+        background-color: cornflowerblue;
+    }
+
+    #mailkind a:nth-child(3):hover {
+        background-color: green;
+    }
+
+    #rightcontent {
+        position: absolute;
+        right: 0px;
+        top: 55px;
+    }
+
+    #rightcontent a {
+
+        width: 30px;
+        height: 10px;
+    }
+</style>
+<body>
+
+<ul style="background-color: white; position: fixed; z-index: 2; border-bottom: 1px solid lightgray;">
+    <li><a  style="border-radius: 50px;"><img src="./img/기본 메뉴.gif" style="height: 30px;"></a>
+    </li>
+    <a><img src="./img/MGmail.jpg" style="padding: 16px"></a>
+    <input  type="search" 
+            style="border-style: none; margin: 12px; border-radius: 10px; width: 550px; height: 40px; font-size: 16px; background-color: rgb(240, 240, 240);" 
+            name="search" 
+            id="search" 
+            placeholder="☞   메일 검색">
+        
+    <li id="myinfo">
+        <div style="width: 250px">
+        <a style="border-radius: 50px; float: right;"></a>
+        <a style="border-radius: 50px; float: right;"><img src="./img/메뉴.png"></a>
+        <a style="border-radius: 50px; float: right;"><img src="./img/톱니바퀴.png"></a>
+        <a style="border-radius: 50px; float: right;"><img src="./img/물음표.png"></a>
+        </div>
+    </li>
+</ul>
+
+<ul style="background-color: white; position: fixed; right: 0; width: 50px; height: 1000px; border-left: 1px solid lightgray;">
+    
+    <li id="rightcontent">
+        <a><img src="./img/캘린더.gif"></a>
+        <a><img src="./img/keep.gif"></a>
+        <a><img src="./img/tasks.gif"></a>
+        <a><img src="./img/연락처.gif"></a>
+    </li>
+</ul>
+
+<ul style="border-bottom: 1px solid lightgray; height: 40px; z-index: -1; padding: 85px 0 0 250px;">
+    <li id="sort">
+        <a><img src="./img/선택.gif"></a>
+        <a><img src="./img/선택2.gif"></a>
+        <a><img src="./img/새로고침.gif"></a>
+        <a><img src="./img/더 보기.gif"></a>
+    </li>
+</ul>
+
+<ul class="leftbar" style="background-color: white; z-index: -1; width: 230px; height: 1000px; padding: 80px 0 0 2px;">
+    <li>
+        <img src="./img/플러스모양.png">
+
+        <img style="margin: 12px 120px 0 20px;" src="./img/받은편지함.gif">
+        <img style="margin: 8px 120px 0 22px;" src="./img/별표편지함.gif">
+        <img style="margin: 8px 120px 0 22px;" src="./img/다시 알림 항목.gif">
+        <img style="margin: 8px 120px 0 19px;" src="./img/보낸편지함.gif">
+        <img style="margin: 8px 120px 0 13px;" src="./img/임시보관함.gif">
+    </li>
+</ul>
+<ul id="leftcontent" style="position: fixed; width: 150px; padding: 140px 0 0 60px">
+    <li>
+    <div>
+        <a>받은편지함</a>
+        <a>별표편지함</a>
+        <a>다시 알림 항목</a>
+        <a>보낸편지함</a>
+        <a>임시보관함</a>
+    </div>
+    </li>
+</ul>
+<ul style="z-index: -2; border-bottom: 1px solid lightgray; padding: 120px 0 0 250px">
+    <li id="mailkind">
+        <a>기본</a>
+        <a>소셜</a>
+        <a>프로모션</a>
+    </li>
+</ul>
+</body>
+</html>
