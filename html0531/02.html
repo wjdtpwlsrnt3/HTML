@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .th {
+        height: 40px;
+    }
+</style>
+<body>
+    <div class="wrap">
+        <h1>테이블</h1>
+        <p>전체 테이블 : table</p>
+        <p>행 : tr</p>
+        <p>제목테이터 : th</p>
+        <p>데이터 : td</p>
+        <p>열 합치기 : colspan</p>
+        <p>행 합치기 : rowspan</p>
+
+        <figure>
+            <figcaption>피겨 제목</figcaption>
+
+        <table border="1">
+            <caption>테이블 제목</caption>
+            <!-- <colgroup>
+                <col span="2" style="background-color: red;">
+            </colgroup> -->
+            <tr>
+                <th class="th">이름</th>
+                <td width="200px"><input type="text"></td>
+                <th>연락처</th>
+                <td width="200px"><input type="text"></td>
+            </tr>
+            <tr>
+                <th class="th">주소</th>
+                <td colspan="3" style="border-color: orange;"></td>
+            </tr>
+            <tr>
+                <th class="th">자기소개</th>
+                <td colspan="3"></td>
+            </tr>
+        </table>
+        <tbody>
+            <tr></tr>
+            <tr></tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <td></td>
+                <td></td>
+            </tr>
+        </tfoot>
+    </figure>
+
+    </div>
+</body>
+</html>
