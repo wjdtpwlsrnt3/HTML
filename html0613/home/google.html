@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    #header {
+        height: 60px;
+    }
+
+    #body>p {
+        word-spacing: -50px;
+        margin: 10vh 0 0 0;
+        text-align: center;
+        font-size: 100px;
+    }
+
+    #body>p>span:nth-child(1) {
+        color: cornflowerblue;
+    }
+
+    #body>p>span:nth-child(2) {
+        color: red;
+    }
+
+    #body>p>span:nth-child(3) {
+        color: yellow;
+    }
+
+    #body>p>span:nth-child(4) {
+        color: cornflowerblue;
+    }
+
+    #body>p>span:nth-child(5) {
+        color: green;
+    }
+
+    #body>p>span:nth-child(6) {
+        color: red;
+    }
+
+    #search {
+        background-image: url(./이미지/돋보기.png);
+        background-repeat: no-repeat;
+        background-position: 15px;
+        border-radius: 30px;
+        height: 40px;
+        width: 500px;
+        margin: 60px 0 0 0;
+        border-style: none;
+        box-shadow: 0px 0px 2px 2px lightgray;
+    }
+
+    #profile {
+        text-align: center;
+        float: right;
+        margin: 15px 15px 0 0;
+        border-radius: 30px;
+        width: 30px;
+        height: 30px;
+    }
+
+    #profile>img {
+        margin: 5px 0 0 0;
+    }
+
+    #profile:hover {
+        background-color: gray;
+    }
+
+    #app {
+        text-align: center;
+        float: right;
+        margin: 15px 15px 0 0;
+        border-radius: 30px;
+        width: 30px;
+        height: 30px;
+    }
+
+    #app>img {
+        margin: 5px 0 0 0;
+    }
+
+    #app:hover {
+        background-color: gray;
+    }
+
+    #img {
+        float: right;
+        margin: 20px 15px 0 0;
+    }
+
+    #img>a {
+        text-decoration: none;
+        color: black;
+    }
+
+    #img>a:hover {
+        text-decoration: underline;
+    }
+
+    #gmail {
+        float: right;
+        margin: 20px 15px 0 0;
+    }
+
+    #gmail>a {
+        text-decoration: none;
+        color: black;
+    }
+
+    #gmail>a:hover {
+        text-decoration: underline;
+    }
+
+    button {
+        background-image: url(./이미지/연필.png);
+        background-repeat: no-repeat;
+        background-position: 15px;
+        text-align: right;
+        width: 150px;
+        height: 40px;
+        border-radius: 30px;
+        border: none;
+        color: cornflowerblue;
+        box-shadow: 0 0 2px gray;
+        /* margin: 8px 0 0 0; */
+        background-color: white;
+    }
+
+    #footer {
+        position: fixed;
+        bottom: 10px;
+        right: 20px;
+    }
+</style>
+
+<body>
+    <div id="container">
+        <div id="header">
+            <div id="profile">
+                <img src="./img/구글메뉴.png">
+            </div>
+            <div id="app">
+                <img src="./img/구글메뉴.png">
+            </div>
+            <div id="img">
+                <a href="gimg.html">이미지</a>
+            </div>
+            <div id="gmail">
+                <a href="gmail.html">Gmail</a>
+            </div>
+        </div>
+        <div id="body">
+            <p>
+                <span>G</span>
+                <span>o</span>
+                <span>o</span>
+                <span>g</span>
+                <span>l</span>
+                <span>e</span>
+            </p>
+            <center>
+                <input id="search" type="text" placeholder="           Google 검색 또는 URL 입력">
+
+            </center>
+        </div>
+        <div id="footer">
+            <button>Chrome 맞춤설정</button>
+        </div>
+    </div>
+</body>
+
+</html>
