@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+
+</html>
+
+<script type="text/javascript">
+    //<link href="https://fonts.googleapis.com/css2?family=Fascinate&display=swap" rel="stylesheet">
+
+    let clock = { //객체 생성자 함수
+        div: document.createElement('div'),
+        init: function (target) {
+            let link = document.createElement('link');
+            link.rel = 'stylesheet';
+            link.href = 'https://fonts.googleapis.com/css2?family=Fascinate&display=swap';
+            document.head.appendChild(link);
+
+            //this.div.id = "clock";
+            target.appendChild(this.div);
+            this.style();
+            this.run();
+        },
+        run: function () {
+            let self = this;
+            setInterval(function () { //this
+                let now = new Date();
+                let ampm;
+                let mempty;
+                let sempty;
+                if (now.getHours() >= 12) {
+                    ampm = 'PM';
+                } else {
+                    ampm = 'AM';
+                }
+                if (now.getMinutes() < 10) {
+                    mempty = '0';
+                } else {
+                    mempty = '';
+                }
+                if (now.getSeconds() < 10) {
+                    sempty = '0';
+                } else {
+                    sempty = '';
+                }
+                self.div.innerText =
+                    ampm + ' ' + now.getHours() % 12 + " : " + mempty + now.getMinutes() + " : " + sempty + now.getSeconds();
+            }, 1000);
+        },
+        style: function () {
+            this.div.style.fontSize = '5vw';
+            this.div.style.color = 'blue';
+            this.div.style.fontWeight = 'bold';
+            this.div.style.fontFamily = 'Fascinate';
+        }
+    };
+
+    clock.init(document.body);
+</script>
