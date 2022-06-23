@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .tab-btn-area {
+        border: 1px solid black;
+    }
+
+    .tab-btn-area::after {
+        clear: both;
+        display: table;
+        content: '';
+    }
+
+    .tab-btn-area>div {
+        float: left;
+        width: 100px;
+        border-right: 1px solid black;
+        text-align: center;
+        height: 75px;
+        line-height: 75px;
+        cursor: pointer;
+        transition: .3s;
+    }
+
+    .tab-btn-area>div:hover {
+        background-color: #ddd;
+    }
+
+    .tab-contents {
+        position: relative;
+        height: 125px;
+        border: 1px solid black;
+        border-top: 0;
+    }
+
+    .tab-contents>div {
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-color: white;
+    }
+
+    .tab-contents>div:first-child {
+        z-index: 3;
+    }
+
+    .tab-contents>div:nth-child(2) {
+        z-index: 2;
+    }
+
+    .tab-contents>div:last-child {
+        z-index: 1;
+    }
+</style>
+<script>
+    window.onload = function () {
+        let btnArea = document.querySelector('.tab-btn-area');
+        let btns = btnArea.children;
+        let ctnsArea = document.querySelector('.tab-contents');
+        let ctns = ctnsArea.children;
+
+        for (let i = 0; i < btns.length; i++) {
+            btns[i].onclick = function () {
+                for (let j = 0; j < btns.length; j++) {
+                    if (this == btns[j]) {
+                        ctns[j].style.display = 'block';
+                    } else {
+                        ctns[j].style.display = 'none';
+                    }
+                }
+            }
+        }
+    };
+</script>
+
+<body>
+    <div class="tab">
+        <div class="tab-btn-area">
+            <div>런던</div>
+            <div>파리</div>
+            <div>서울</div>
+        </div>
+        <div class="tab-contents">
+            <div>
+                <h1>런던</h1>
+                <p>런던.</p>
+            </div>
+            <div>
+                <h1>파리</h1>
+                <p>파리.</p>
+            </div>
+            <div>
+                <h1>서울</h1>
+                <p>서울은 한국의 수도이다.</p>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
